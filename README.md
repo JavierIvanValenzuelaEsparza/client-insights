@@ -1,36 +1,53 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<h2 align="left">¡Hola! 👋 Soy Javier Ivan, Desarrollador de Software de Tijuana, Baja California</h2>
 
-## Getting Started
+---
 
-First, run the development server:
+<div align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=JavierIvanValenzuelaEsparza&theme=dark&show_icons=true&hide_border=true&count_private=true"/>
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierIvanValenzuelaEsparza&theme=dark&show_icons=true&hide_border=true&layout=compact"/>
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+</div>
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
+<img align="right" height="150" src ='https://i.pinimg.com/originals/65/eb/8a/65eb8a6b4a8966bafd26d1dee21ed97f.gif'/>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+<div align="left">
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" height="30" alt="logo de JavaScript"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" height="30" alt="logo de TypeScript"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" height="30" alt="logo de React"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original-wordmark.svg" height="39" alt="logo de Node.js"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" height="30" alt="logo de Python"  />
+  <img width="12" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original-wordmark.svg" height="30" alt="logo de MongoDB"  />
+  <img width="16" />
+  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tailwindcss/tailwindcss-original-wordmark.svg" height="30" alt="logo de Tailwind"  />
+</div>
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+<div align="left">
+  <a href="https://www.youtube.com/">
+    <img src="https://img.shields.io/static/v1?message=YouTube&logo=youtube&label=&color=FF0000&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="logo de YouTube"  />
+  </a>
+  <a href="https://www.instagram.com/whoistymo">
+    <img src="https://img.shields.io/static/v1?message=Instagram&logo=instagram&label=&color=E4405F&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="logo de Instagram"  />
+  </a>
+  <a href="https://www.twitch.tv/">
+    <img src="https://img.shields.io/static/v1?message=Twitch&logo=twitch&label=&color=9146FF&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="logo de Twitch"  />
+  </a>
+  <a href="https://discord.com/">
+    <img src="https://img.shields.io/static/v1?message=Discord&logo=discord&label=&color=7289DA&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="logo de Discord"  />
+  </a>
+  <a href="mailto:tu_correo@gmail.com">
+    <img src="https://img.shields.io/static/v1?message=Gmail&logo=gmail&label=&color=D14836&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="logo de Gmail"  />
+  </a>
+  <a href="https://www.linkedin.com/in/tu_perfil/">
+    <img src="https://img.shields.io/static/v1?message=LinkedIn&logo=linkedin&label=&color=0077B5&logoColor=white&labelColor=&style=for-the-badge" height="35" alt="logo de LinkedIn"  />
+  </a>
+</div>

@@ -1,50 +1,66 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { TestimonialForm } from "@/components/testimonial-form";
 import { TestimonialCard } from "@/components/testimonial-card";
 import { ThemeToggle } from "@/components/theme-toggle";
 
-const MOCK_TESTIMONIALS = [
-  {
-    id: "1",
-    client_name: "María García",
-    company: "TechStart Solutions",
-    project_type: "Aplicación Web",
-    rating: 5,
-    comment: "Excelente trabajo en el desarrollo de nuestra plataforma. El equipo demostró gran profesionalismo y cumplió con todos los plazos establecidos. La calidad del código y la atención al detalle superaron nuestras expectativas.",
-    created_at: "2024-01-15T10:00:00Z"
-  },
-  {
-    id: "2",
-    client_name: "Carlos Rodríguez",
-    company: "Innovatech Labs",
-    project_type: "Aplicación Móvil",
-    rating: 5,
-    comment: "Transformaron nuestra idea en una aplicación móvil increíble. La comunicación fue fluida durante todo el proceso y los resultados son excepcionales. Definitivamente recomendaría sus servicios.",
-    created_at: "2024-01-10T14:30:00Z"
-  },
-  {
-    id: "3",
-    client_name: "Ana Martínez",
-    company: "Digital Commerce",
-    project_type: "E-commerce",
-    rating: 4,
-    comment: "Muy satisfechos con el desarrollo de nuestra tienda online. El sistema es rápido, intuitivo y exactamente lo que necesitábamos para escalar nuestro negocio.",
-    created_at: "2024-01-05T09:15:00Z"
-  }
-];
+interface Testimonial {
+  id: number;
+  fullName: string;
+  company: string;
+  projectType: string;
+  rating: number;
+  opinion: string;
+  createdAt: string;
+}
+
+const API_URL = process.env.NEXT_PUBLIC_BASE_URL + "testimonials";
 
 export default function Home() {
-  const [testimonials, setTestimonials] = useState(MOCK_TESTIMONIALS);
+  const [testimonials, setTestimonials] = useState<Testimonial[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const handleSubmit = (data: { client_name: string; company: string; project_type: string; rating: number; comment: string }) => {
-    const newTestimonial = {
-      id: Date.now().toString(),
-      ...data,
-      created_at: new Date().toISOString()
-    };
-    setTestimonials([newTestimonial, ...testimonials]);
+  useEffect(() => {
+    fetchTestimonials();
+  }, []);
+
+  const fetchTestimonials = async () => {
+    try {
+      const response = await fetch(API_URL);
+      if (response.ok) {
+        const data = await response.json();
+        setTestimonials(data);
+      }
+    } catch (error) {
+      console.error("Error fetching testimonials:", error);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
+  const handleSubmit = async (data: { client_name: string; company: string; project_type: string; rating: number; comment: string }) => {
+    try {
+      const response = await fetch(API_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          fullName: data.client_name,
+          company: data.company,
+          projectType: data.project_type,
+          rating: data.rating,
+          opinion: data.comment,
+        }),
+      });
+
+      if (response.ok) {
+        await fetchTestimonials();
+      }
+    } catch (error) {
+      console.error("Error submitting testimonial:", error);
+    }
   };
 
   return (
@@ -114,9 +130,26 @@ export default function Home() {
             </div>
             
             <div className="space-y-6">
-              {testimonials.map((testimonial) => (
-                <TestimonialCard key={testimonial.id} testimonial={testimonial} />
-              ))}
+              {isLoading ? (
+                <div className="text-center text-muted-foreground py-8">Cargando testimonios...</div>
+              ) : testimonials.length === 0 ? (
+                <div className="text-center text-muted-foreground py-8">No hay testimonios aún</div>
+              ) : (
+                testimonials.map((testimonial) => (
+                  <TestimonialCard 
+                    key={testimonial.id} 
+                    testimonial={{
+                      id: testimonial.id.toString(),
+                      client_name: testimonial.fullName,
+                      company: testimonial.company,
+                      project_type: testimonial.projectType,
+                      rating: testimonial.rating,
+                      comment: testimonial.opinion,
+                      created_at: testimonial.createdAt
+                    }} 
+                  />
+                ))
+              )}
             </div>
           </div>
         </div>
